@@ -17,26 +17,34 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body { height: 100%; font-family: 'Segoe UI', sans-serif; }
 
-/* Full-page background */
+/* Full-page blurred background */
 body {
-    background-image: url("https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/557336291_122257277960221835_1801806274016694332_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHFwD90xiupXj0EJcgc45-YDYaLDnwFvPgNhosOfAW8-NEHFrghsUPAlXYjmNQRTSiZaruIzrEayOTvek6vKy_X&_nc_ohc=sQNeX-b2Of4Q7kNvwEGoM9P&_nc_oc=AdkRflL1nxyfrvH9V1a3njxxgFj5PA0NjZKcb7cnz4xJuoMwkqh9KjLHoJ7WZTDI_Os&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=E5dslVDwX9Idc72MjCsqRQ&oh=00_AfkHGar9V9ty79WD44u428QU_v2sqBC2CUZX8yjUD4-PBQ&oe=694FF4D5");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #2C2C2C;
-    padding: 40px 20px;
     position: relative;
+    padding: 40px 20px;
+    color: #2C2C2C;
 }
 
-/* Overlay for readability */
 body::before {
     content: '';
     position: fixed;
     top:0; left:0;
     width:100%; height:100%;
-    background: rgba(255, 255, 255, 0.25); /* soft vintage overlay */
-    pointer-events: none;
+    background-image: url("https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/557336291_122257277960221835_1801806274016694332_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHFwD90xiupXj0EJcgc45-YDYaLDnwFvPgNhosOfAW8-NEHFrghsUPAlXYjmNQRTSiZaruIzrEayOTvek6vKy_X&_nc_ohc=sQNeX-b2Of4Q7kNvwEGoM9P&_nc_oc=AdkRflL1nxyfrvH9V1a3njxxgFj5PA0NjZKcb7cnz4xJuoMwkqh9KjLHoJ7WZTDI_Os&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=E5dslVDwX9Idc72MjCsqRQ&oh=00_AfkHGar9V9ty79WD44u428QU_v2sqBC2CUZX8yjUD4-PBQ&oe=694FF4D5");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+/* Overlay for softer look */
+body::after {
+    content: '';
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(255,255,255,0.2);
+    z-index: -1;
 }
 
 /* Header */
@@ -168,6 +176,57 @@ header p {
     opacity: 0.9;
 }
 
+/* Vision & Mission Section */
+.vision-mission {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    color: #4A3F35;
+    position: relative;
+    z-index: 1;
+}
+
+.vision-mission h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #8B5A3C;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.vm-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.vm-box {
+    flex: 1 1 400px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.vm-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #5A4B3C;
+}
+
+.vm-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -185,8 +244,9 @@ footer {
 
 <header>
 <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/557629194_122257276664221835_5560286584406453369_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHsEqM3uVePGa57A9HzbJW8gMEqQwcmlGKAwSpDByaUYjysqZboOMpKFPhPSKvuQyc2biDP54dV9djmK2PVJ5bc&_nc_ohc=b5u0NAM2dScQ7kNvwHRvH02&_nc_oc=AdkQhNc680rp695LWkq165VvaA457KjQTg3DYYBcwik3YzH8qlhCW-tqJO_uXZopx7w&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=rX5Xmp5fQVFqi-Mr3MqSSQ&oh=00_AfkzZ4OMDoFq1CCenBg6aTfoYrSIdjHJO33ZZKwqofL1MA&oe=694FE9E6" 
-         alt="Kinaiya Journalism Club Logo">    <h1>Kinaiya Journalism Club Photo Gallery</h1>
-    <p>Explore, view, and download high-quality photos from our events</p>
+         alt="Kinaiya Journalism Club Logo">    
+<h1>Kinaiya Journalism Club Photo Gallery</h1>
+<p>Explore, view, and download high-quality photos from our events</p>
 </header>
 
 <section class="gallery">
@@ -196,7 +256,7 @@ footer {
         <div class="album-content">
             <h2>Club Event 1</h2>
             <p>All photos available in original quality.</p>
-            <a href="https://drive.google.com/drive/folders/1P0mzDJtmA-YVqkxzu00EFw7nLgoYcAfh?usp=sharing" target="_blank">Open Album</a>
+            <a href="https://drive.google.com/drive/folders/15DDHCNDGjrX3broEDu-nCr6hYFdUSEKs?usp=sharing" target="_blank">Open Album</a>
         </div>
     </div>
     <!-- Album 2 -->
@@ -223,6 +283,21 @@ footer {
     <button onclick="shareSite()">Share Website</button>
     <button onclick="copyLink()">Copy Website Link</button>
 </div>
+
+<!-- Vision & Mission -->
+<section class="vision-mission">
+    <h2>Our Vision & Mission</h2>
+    <div class="vm-content">
+        <div class="vm-box">
+            <h3>Vision</h3>
+            <p>We strive to be the beacon of student expression where every story is heard, every truth valued, and every vOIGE sparks awareness, action, and change. We envision, a community where no voice is lost, and student journalists grow both in Graft and character, shaping narratives that enlighten minds, move hearts, and nurture positive transformation.</p>
+        </div>
+        <div class="vm-box">
+            <h3>Mission</h3>
+            <p>Kinaiya champions fearless journalism that speaks truth, spark's thought, and connects hearts. We exist to amplify student voices and transform words into impact. Through creative and honest storytellin, we aim to inform, inspire, and awaken understanding within community</p>
+        </div>
+    </div>
+</section>
 
 <footer>
     © 2025 • Kinaiya Journalism Club
