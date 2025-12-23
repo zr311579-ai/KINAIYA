@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kinaiya Journalism Club Photo Gallery</title>
+
+<!-- SOCIAL SHARE PREVIEW -->
+<meta property="og:title" content="Kinaiya Journalism Club Photo Gallery">
+<meta property="og:description" content="Explore and download high-quality photos from Kinaiya Journalism Club events.">
+<meta property="og:image" content="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/557336291_122257277960221835_1801806274016694332_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHFwD90xiupXj0EJcgc45-YDYaLDnwFvPgNhosOfAW8-NEHFrghsUPAlXYjmNQRTSiZaruIzrEayOTvek6vKy_X&_nc_ohc=sQNeX-b2Of4Q7kNvwEGoM9P&_nc_oc=AdkRflL1nxyfrvH9V1a3njxxgFj5PA0NjZKcb7cnz4xJuoMwkqh9KjLHoJ7WZTDI_Os&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=E5dslVDwX9Idc72MjCsqRQ&oh=00_AfkHGar9V9ty79WD44u428QU_v2sqBC2CUZX8yjUD4-PBQ&oe=694FF4D5">
+<meta property="og:type" content="website">
+<meta property="og:url" content="YOUR_WEBSITE_URL_HERE">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* Reset & body */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height: 100%; font-family: 'Segoe UI', sans-serif; }
+
+/* Full-page background */
+body {
+    background-image: url("https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/557336291_122257277960221835_1801806274016694332_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHFwD90xiupXj0EJcgc45-YDYaLDnwFvPgNhosOfAW8-NEHFrghsUPAlXYjmNQRTSiZaruIzrEayOTvek6vKy_X&_nc_ohc=sQNeX-b2Of4Q7kNvwEGoM9P&_nc_oc=AdkRflL1nxyfrvH9V1a3njxxgFj5PA0NjZKcb7cnz4xJuoMwkqh9KjLHoJ7WZTDI_Os&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=E5dslVDwX9Idc72MjCsqRQ&oh=00_AfkHGar9V9ty79WD44u428QU_v2sqBC2CUZX8yjUD4-PBQ&oe=694FF4D5");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #2C2C2C;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Overlay for readability */
+body::before {
+    content: '';
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(255, 255, 255, 0.25); /* soft vintage overlay */
+    pointer-events: none;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 3rem;
+    line-height:1.2;
+    color: #8B5A3C;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #4A3F35;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Gallery Grid */
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Album Card - Glass Effect */
+.album {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.album:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 45px rgba(0,0,0,0.35);
+}
+
+.album img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    filter: sepia(0.2) contrast(0.9);
+}
+
+.album-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.album-content h2 {
+    margin-bottom: 10px;
+    color: #5A4B3C;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.album-content p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    color: #4A3F35;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.album-content a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #BFA176, #8B5A3C);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.album-content a:hover {
+    background: linear-gradient(135deg, #8B5A3C, #BFA176);
+    transform: scale(1.05);
+}
+
+/* Share Buttons */
+.share-container {
+    text-align: center;
+    margin: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.share-container button {
+    background: linear-gradient(135deg, #BFA176, #8B5A3C);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s, opacity 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.share-container button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+    color: #5A4B3C;
+    position: relative;
+    z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/557629194_122257276664221835_5560286584406453369_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHsEqM3uVePGa57A9HzbJW8gMEqQwcmlGKAwSpDByaUYjysqZboOMpKFPhPSKvuQyc2biDP54dV9djmK2PVJ5bc&_nc_ohc=b5u0NAM2dScQ7kNvwHRvH02&_nc_oc=AdkQhNc680rp695LWkq165VvaA457KjQTg3DYYBcwik3YzH8qlhCW-tqJO_uXZopx7w&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=rX5Xmp5fQVFqi-Mr3MqSSQ&oh=00_AfkzZ4OMDoFq1CCenBg6aTfoYrSIdjHJO33ZZKwqofL1MA&oe=694FE9E6" 
+         alt="Kinaiya Journalism Club Logo">    <h1>Kinaiya Journalism Club Photo Gallery</h1>
+    <p>Explore, view, and download high-quality photos from our events</p>
+</header>
+
+<section class="gallery">
+    <!-- Album 1 -->
+    <div class="album">
+        <img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/574905695_122262592460221835_9177504594140428228_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF_ssc2gn3HRVHlukKTYSSGe5jGBP3c3GF7mMYE_dzcYfweDB4Y7UeF6gFospSHFwSsc_igjSvS9XQDTEIjFMP9&_nc_ohc=IIJkTHSawKAQ7kNvwGLOJbG&_nc_oc=AdkfHQpz9sgBX6TcevS8llNvqiqgcAOEGWdYOJVbAk7Cd0uTg1KHRKewTMVAAZ4gpJQ&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=G1duKVq0lS6uF6N8HYsO8A&oh=00_AfndqO2y9fONIXWurhV9bCcb7wCpPNgbGaYZ7O3SQz2naA&oe=694FF096" alt="Club Event 1">
+        <div class="album-content">
+            <h2>Club Event 1</h2>
+            <p>All photos available in original quality.</p>
+            <a href="https://drive.google.com/drive/folders/1P0mzDJtmA-YVqkxzu00EFw7nLgoYcAfh?usp=sharing" target="_blank">Open Album</a>
+        </div>
+    </div>
+    <!-- Album 2 -->
+    <div class="album">
+        <img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/471654135_122197189964221835_6324219775224063223_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeHUdx6uV6bn69WP7wFLAuI1hEmyb7y1HCmESbJvvLUcKej3Bb_gV8mga0ESf8o16ELFhIOiS85ZarFeY470V_M5&_nc_ohc=GEfinLmo15UQ7kNvwGek0Sa&_nc_oc=AdkeTCLEhKJr5VUi8Oyzwxzc6anGeHflcoatoThW5fOa3d8LjE4Kp0UALeZNJ_Hs7wI&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=yiZZYqVzT053lrr8-cukcw&oh=00_AfnSMFMhFzaU6UYUYyPRYPtlWYK74ybF-UEsxtKeW1-NGQ&oe=69500158" alt="Club Event 2">
+        <div class="album-content">
+            <h2>Club Event 2</h2>
+            <p>Photos from our latest journalism projects.</p>
+            <a href="https://drive.google.com/drive/folders/YOUR_SECOND_FOLDER_ID" target="_blank">Open Album</a>
+        </div>
+    </div>
+    <!-- Album 3 -->
+    <div class="album">
+        <img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/574577725_122262919850221835_2038269758464384184_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGgNbRxkBIvOo7B2KCpS4qbw8jmgkNXD_nDyOaCQ1cP-TLNW7HSalK7Vg3aGqxnS2YPMYHIlG2dM64rEEvvkJuK&_nc_ohc=HKWyLvx2C_MQ7kNvwEc8vwh&_nc_oc=AdmFP_7lNnNDvFTVJZBe9lr9Ds8YaEQeRuefwe1nb2Mtl99HHFFJ0fZdB3cWZQJXA_U&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=wYDJDmDZWy9_R3FyV1_gdQ&oh=00_AfmJb7cCugmGIlsGaQLc4bPAumQIP3qbwRZfd1eYmBPWYQ&oe=694FFE18" alt="Club Event 3">
+        <div class="album-content">
+            <h2>Club Event 3</h2>
+            <p>High-quality photos for download.</p>
+            <a href="https://drive.google.com/drive/folders/YOUR_THIRD_FOLDER_ID" target="_blank">Open Album</a>
+        </div>
+    </div>
+</section>
+
+<div class="share-container">
+    <button onclick="shareSite()">Share Website</button>
+    <button onclick="copyLink()">Copy Website Link</button>
+</div>
+
+<footer>
+    © 2025 • Kinaiya Journalism Club
+</footer>
+
+<script>
+function shareSite() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Kinaiya Journalism Club Photo Gallery',
+            text: 'Check out our high-quality club photos!',
+            url: window.location.href
+        });
+    } else {
+        alert("Sharing not supported on this browser. Use Copy Website Link.");
+    }
+}
+
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Website link copied!");
+}
+</script>
+
+</body>
+</html>
